@@ -9,40 +9,91 @@
     "dismissible": true
   },
   "latest": {
-    "version": "1.7.0",
-    "date": "2025-11-25",
-    "endDate": "2025-11-26",
-    "milestone": "新增设计编制模块架构重构",
-    "downloadUrl": "https://spdi.orienthong.cn/cpms/about",
+    "version": "1.8.0",
+    "date": "2025-11-27",
+    "milestone": "自动更新检查与 CPMS 模块化重构",
+    "downloadUrl": "https://drive.weixin.qq.com/s?k=AHsA5QeVABEKobt2cw",
     "features": [
       {
-        "title": "设计编制流程保存与审批",
-        "description": "支持 SJTJ 任务的完整保存和提交审批流程"
-      },
-      {
-        "title": "概预算预览表格",
-        "description": "新增独立组件，直观展示预算明细"
+        "title": "自动更新检查",
+        "description": "新增自动更新检查功能，支持右下角 Toast 通知新版本"
       }
     ],
     "fixes": [
       {
-        "title": "任务提交功能修复",
-        "description": "解决 SJTJ 任务提交过程中的异常问题"
+        "title": "附件多文件配置修复",
+        "description": "修复附件多文件配置 UI 溢出及添加已识别文件后无法进入下一步的问题"
+      },
+      {
+        "title": "附件移除修复",
+        "description": "修复附件类型第一个文件无法移除的问题"
+      },
+      {
+        "title": "文件分类流程修复",
+        "description": "修复文件手动分类后无法进入下一步的问题"
+      },
+      {
+        "title": "物资清单识别增强",
+        "description": "物资清单导入表添加 PMS 关键词识别"
+      },
+      {
+        "title": "设计编制格式支持",
+        "description": "设计编制文件格式支持 doc 格式"
       }
     ],
     "improvements": [
       {
-        "title": "版本号更新",
-        "description": "同步更新版本号"
+        "title": "CPMS API 模块化重构",
+        "description": "拆分 CpmsAPIService 为模块化架构，提升代码可维护性"
       },
       {
-        "title": "清理废弃文件",
-        "description": "删除不再使用的文档和文件"
+        "title": "默认首页调整",
+        "description": "修改默认首页为 CPMS 页面，优化用户体验"
+      },
+      {
+        "title": "更新通知优化",
+        "description": "将更新通知改为右下角 Toast 样式，减少干扰"
+      },
+      {
+        "title": "代码清理",
+        "description": "移除过时文件和测试页面，保持项目整洁"
       }
     ],
-    "releaseNotes": "这是一个重要更新，包含了设计编制流程保存与审批和概预算预览表格功能。建议所有用户尽快更新。"
+    "releaseNotes": "本次更新新增自动更新检查功能，重构 CPMS API 模块架构，并修复多个设计编制流程的问题。建议所有用户尽快更新。"
   },
   "versions": [
+    {
+      "version": "1.7.0",
+      "date": "2025-11-25",
+      "endDate": "2025-11-26",
+      "milestone": "新增设计编制模块架构重构",
+      "features": [
+        {
+          "title": "设计编制流程保存与审批",
+          "description": "支持 SJTJ 任务的完整保存和提交审批流程"
+        },
+        {
+          "title": "概预算预览表格",
+          "description": "新增独立组件，直观展示预算明细"
+        }
+      ],
+      "fixes": [
+        {
+          "title": "任务提交功能修复",
+          "description": "解决 SJTJ 任务提交过程中的异常问题"
+        }
+      ],
+      "improvements": [
+        {
+          "title": "版本号更新",
+          "description": "同步更新版本号"
+        },
+        {
+          "title": "清理废弃文件",
+          "description": "删除不再使用的文档和文件"
+        }
+      ]
+    },
     {
       "version": "1.6.0",
       "date": "2025-11-25",
@@ -475,12 +526,17 @@
       "version": "1.6.0",
       "title": "架构重构",
       "description": "设计编制模块架构重构"
+    },
+    {
+      "version": "1.8.0",
+      "title": "自动更新与模块化",
+      "description": "自动更新检查与 CPMS 模块化重构"
     }
   ],
   "statistics": {
-    "totalVersions": 16,
-    "totalFeatures": 28,
-    "totalFixes": 14,
-    "totalImprovements": 18
+    "totalVersions": 17,
+    "totalFeatures": 29,
+    "totalFixes": 19,
+    "totalImprovements": 22
   }
 }
