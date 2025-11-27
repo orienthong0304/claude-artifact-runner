@@ -305,7 +305,7 @@ const App = () => {
             </p>
             {/* 下载按钮 */}
             <a
-              href="https://drive.weixin.qq.com/s?k=AHsA5QeVABExQe0GK5"
+              href="https://drive.weixin.qq.com/s?k=AHsA5QeVABEERNiaGL"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 transition-all duration-300 shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] hover:scale-105 transform"
@@ -852,8 +852,8 @@ const ChangelogSection = () => {
       .then((data: ChangelogData) => {
         setChangelogData(data);
         // 默认展开最新版本
-        if (data.versions.length > 0) {
-          setExpandedVersions([data.versions[0].version]);
+        if (data.latest) {
+          setExpandedVersions([data.latest.version]);
         }
         setLoading(false);
       })
@@ -893,9 +893,11 @@ const ChangelogSection = () => {
     );
   }
 
+  // 合并 latest 和 versions，latest 在最前面
+  const allVersions = [changelogData.latest, ...changelogData.versions];
   const displayVersions = showAllVersions
-    ? changelogData.versions
-    : changelogData.versions.slice(0, 3);
+    ? allVersions
+    : allVersions.slice(0, 3);
 
   return (
     <section className="mt-12">
@@ -903,7 +905,7 @@ const ChangelogSection = () => {
         <History className="text-cyan-400" />
         <h2 className="text-xl font-bold text-white">CHANGELOG_HISTORY</h2>
         <span className="text-xs text-slate-500 bg-slate-800 px-2 py-1 rounded">更新日志</span>
-        <span className="text-xs text-cyan-500/60 ml-auto">v{changelogData.currentVersion}</span>
+        <span className="text-xs text-cyan-500/60 ml-auto">v{changelogData.latest.version}</span>
       </div>
 
       {/* 统计总览 */}
@@ -952,7 +954,7 @@ const ChangelogSection = () => {
       </div>
 
       {/* 展开/收起按钮 */}
-      {changelogData.versions.length > 3 && (
+      {allVersions.length > 3 && (
         <div className="mt-6 text-center">
           <button
             onClick={() => setShowAllVersions(!showAllVersions)}
@@ -966,7 +968,7 @@ const ChangelogSection = () => {
             ) : (
               <>
                 <ChevronDown size={16} />
-                查看全部 {changelogData.versions.length} 个版本
+                查看全部 {allVersions.length} 个版本
               </>
             )}
           </button>

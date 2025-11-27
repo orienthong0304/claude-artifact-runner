@@ -1,9 +1,9 @@
 // CC-Extension 更新日志类型定义
-// 数据源: /public/cpms_changelog.json
+// 数据源: /public/update.json
 
 export interface ChangeItem {
   title: string;
-  description: string;
+  description?: string;
 }
 
 export interface VersionInfo {
@@ -15,6 +15,19 @@ export interface VersionInfo {
   fixes?: ChangeItem[];
   improvements?: ChangeItem[];
   docs?: ChangeItem[];
+}
+
+export interface LatestVersion extends VersionInfo {
+  downloadUrl?: string;
+  releaseNotes?: string;
+}
+
+export interface Announcement {
+  enabled: boolean;
+  title: string;
+  content: string;
+  type: 'info' | 'warning' | 'error' | 'success';
+  dismissible: boolean;
 }
 
 export interface Milestone {
@@ -33,17 +46,12 @@ export interface Statistics {
 export interface ChangelogData {
   project: string;
   description: string;
-  versionRules: {
-    major: string;
-    minor: string;
-    patch: string;
-  };
-  currentVersion: string;
-  lastUpdated: string;
+  announcement?: Announcement;
+  latest: LatestVersion;
   versions: VersionInfo[];
   milestones: Milestone[];
   statistics: Statistics;
 }
 
 // JSON 文件路径
-export const CHANGELOG_JSON_PATH = '/cpms_changelog.json';
+export const CHANGELOG_JSON_PATH = '/update.json';
