@@ -9,59 +9,121 @@
     "dismissible": true
   },
   "latest": {
-    "version": "1.8.0",
-    "date": "2025-11-27",
-    "milestone": "自动更新检查与 CPMS 模块化重构",
+    "version": "1.8.3",
+    "date": "2025-12-01",
+    "milestone": "跳过物资清单上传功能",
     "downloadUrl": "https://drive.weixin.qq.com/s?k=AHsA5QeVABEKobt2cw",
     "features": [
       {
-        "title": "自动更新检查",
-        "description": "新增自动更新检查功能，支持右下角 Toast 通知新版本"
+        "title": "跳过物资清单上传",
+        "description": "支持可选跳过物资清单校验和上传，动态调整文件数量要求"
       }
     ],
-    "fixes": [
-      {
-        "title": "附件多文件配置修复",
-        "description": "修复附件多文件配置 UI 溢出及添加已识别文件后无法进入下一步的问题"
-      },
-      {
-        "title": "附件移除修复",
-        "description": "修复附件类型第一个文件无法移除的问题"
-      },
-      {
-        "title": "文件分类流程修复",
-        "description": "修复文件手动分类后无法进入下一步的问题"
-      },
-      {
-        "title": "物资清单识别增强",
-        "description": "物资清单导入表添加 PMS 关键词识别"
-      },
-      {
-        "title": "设计编制格式支持",
-        "description": "设计编制文件格式支持 doc 格式"
-      }
-    ],
+    "fixes": [],
     "improvements": [
       {
-        "title": "CPMS API 模块化重构",
-        "description": "拆分 CpmsAPIService 为模块化架构，提升代码可维护性"
+        "title": "文件数量动态显示",
+        "description": "根据配置动态显示所需文件数量（6或7个），优化用户体验"
       },
       {
-        "title": "默认首页调整",
-        "description": "修改默认首页为 CPMS 页面，优化用户体验"
-      },
-      {
-        "title": "更新通知优化",
-        "description": "将更新通知改为右下角 Toast 样式，减少干扰"
-      },
-      {
-        "title": "代码清理",
-        "description": "移除过时文件和测试页面，保持项目整洁"
+        "title": "验证逻辑优化",
+        "description": "优化文件分类验证逻辑，正确处理跳过物资清单的场景"
       }
     ],
-    "releaseNotes": "本次更新新增自动更新检查功能，重构 CPMS API 模块架构，并修复多个设计编制流程的问题。建议所有用户尽快更新。"
+    "releaseNotes": "本次更新新增跳过物资清单上传功能，支持动态文件数量验证，优化用户配置体验。"
   },
   "versions": [
+    {
+      "version": "1.8.2",
+      "date": "2025-12-01",
+      "milestone": "设计编制附件配置系统",
+      "features": [
+        {
+          "title": "附件类型配置系统",
+          "description": "新增附件类型动态配置功能，支持批量管理和自定义配置"
+        }
+      ],
+      "fixes": [],
+      "improvements": [
+        {
+          "title": "附件配置界面",
+          "description": "新增独立的附件配置区域，支持按类型管理附件文件"
+        }
+      ]
+    },
+    {
+      "version": "1.8.1",
+      "date": "2025-12-01",
+      "milestone": "设计编制模板下载增强",
+      "features": [
+        {
+          "title": "安全生产信息模板下载",
+          "description": "新增安全生产信息导入表模板下载功能"
+        }
+      ],
+      "fixes": [],
+      "improvements": [
+        {
+          "title": "已选任务悬浮按钮",
+          "description": "将已选任务显示改为悬浮按钮+弹出面板，优化弹窗空间利用"
+        },
+        {
+          "title": "模板文件名优化",
+          "description": "下载的模板文件名自动添加任务编码后缀，便于管理"
+        }
+      ]
+    },
+    {
+      "version": "1.8.0",
+      "date": "2025-11-27",
+      "milestone": "自动更新检查与 CPMS 模块化重构",
+      "features": [
+        {
+          "title": "自动更新检查",
+          "description": "新增自动更新检查功能，支持右下角 Toast 通知新版本"
+        }
+      ],
+      "fixes": [
+        {
+          "title": "附件多文件配置修复",
+          "description": "修复附件多文件配置 UI 溢出及添加已识别文件后无法进入下一步的问题"
+        },
+        {
+          "title": "附件移除修复",
+          "description": "修复附件类型第一个文件无法移除的问题"
+        },
+        {
+          "title": "文件分类流程修复",
+          "description": "修复文件手动分类后无法进入下一步的问题"
+        },
+        {
+          "title": "物资清单识别增强",
+          "description": "物资清单导入表添加 PMS 关键词识别"
+        },
+        {
+          "title": "设计编制格式支持",
+          "description": "设计编制文件格式支持 doc 格式"
+        }
+      ],
+      "improvements": [
+        {
+          "title": "CPMS API 模块化重构",
+          "description": "拆分 CpmsAPIService 为模块化架构，提升代码可维护性"
+        },
+        {
+          "title": "默认首页调整",
+          "description": "修改默认首页为 CPMS 页面，优化用户体验"
+        },
+        {
+          "title": "更新通知优化",
+          "description": "将更新通知改为右下角 Toast 样式，减少干扰"
+        },
+        {
+          "title": "代码清理",
+          "description": "移除过时文件和测试页面，保持项目整洁"
+        }
+      ]
+    },
     {
       "version": "1.7.0",
       "date": "2025-11-25",
@@ -531,12 +593,27 @@
       "version": "1.8.0",
       "title": "自动更新与模块化",
       "description": "自动更新检查与 CPMS 模块化重构"
+    },
+    {
+      "version": "1.8.1",
+      "title": "模板下载增强",
+      "description": "设计编制模板下载增强"
+    },
+    {
+      "version": "1.8.2",
+      "title": "附件配置系统",
+      "description": "设计编制附件配置系统"
+    },
+    {
+      "version": "1.8.3",
+      "title": "跳过物资清单",
+      "description": "跳过物资清单上传功能"
     }
   ],
   "statistics": {
-    "totalVersions": 17,
-    "totalFeatures": 29,
+    "totalVersions": 20,
+    "totalFeatures": 32,
     "totalFixes": 19,
-    "totalImprovements": 22
+    "totalImprovements": 27
   }
 }
