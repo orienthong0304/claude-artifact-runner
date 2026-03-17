@@ -6,6 +6,12 @@ import {
 import { motion } from 'framer-motion';
 import * as Tabs from '@radix-ui/react-tabs';
 
+export const meta = {
+  title: "数据引擎演示",
+  description: "项目数据可视化引擎，展示项目进度、预算和风险分析",
+  category: "数据分析",
+};
+
 // 项目数据
 const projectData = [
   { name: '项目A', 进度: 85, 预算使用率: 80, 风险等级: 2, 状态: '正常', 责任人: '张三', 类型: '基建', 开始日期: '2023-06-01', 预计完成日期: '2024-04-30' },

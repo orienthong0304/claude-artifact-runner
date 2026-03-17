@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Clock, Star, Award, Flag, Search, MessageSquare, ChevronLeft, ChevronRight, X, Camera, CheckCircle, HelpCircle, Send, ChevronUp, ChevronDown } from 'lucide-react';
 
+export const meta = {
+  title: "博物馆游戏化学习",
+  description: "博物馆互动游戏化学习体验，支持任务探索和知识问答",
+  category: "展示",
+};
+
 // 添加全局样式
 const globalStyles = `
   @keyframes fadeIn {

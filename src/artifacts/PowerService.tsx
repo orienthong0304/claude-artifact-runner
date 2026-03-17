@@ -22,6 +22,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 
+export const meta = {
+  title: "电力服务",
+  description: "电力报修工单管理系统，支持工单提交和进度跟踪",
+  category: "工具",
+};
+
 type OrderFormData = {
   location: string;
   description: string;

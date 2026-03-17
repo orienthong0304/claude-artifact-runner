@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { complete } from '@/lib/openrouter';
 
+export const meta = {
+  title: "智画SVG演示",
+  description: "AI驱动的SVG图形生成工具，支持文本描述生成专业图形",
+  category: "AI应用",
+};
+
 const ZhihuaSVGDemo = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [processingStatus, setProcessingStatus] = useState('idle');

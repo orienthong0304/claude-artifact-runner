@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+export const meta = {
+  title: "智标审然演示",
+  description: "智能标书审核系统，支持文件上传和风险分析",
+  category: "AI应用",
+};
+
 const ZhitagShenranDemo = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [activeStep, setActiveStep] = useState(1);

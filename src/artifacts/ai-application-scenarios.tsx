@@ -12,6 +12,12 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+export const meta = {
+  title: "AI应用场景",
+  description: "展示AI在不同行业中的应用场景和工作流程",
+  category: "AI应用",
+};
+
 interface ScenarioTabProps {
   icon: LucideIcon;
   title: string;

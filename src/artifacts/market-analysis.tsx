@@ -1,6 +1,12 @@
 import React from 'react';
 import { Zap, Target, Shield, Lightbulb, Award, Network, PieChart, LineChart } from 'lucide-react';
 
+export const meta = {
+  title: "市场分析",
+  description: "医疗AI行业市场竞争格局与战略分析报告",
+  category: "数据分析",
+};
+
 const AnalysisCard = ({ icon: Icon, title, items }) => (
   <div className="bg-white rounded-lg p-6 shadow-md h-full">
     <div className="flex items-center gap-3 mb-4">

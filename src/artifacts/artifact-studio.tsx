@@ -7,6 +7,12 @@ import { Separator } from '@/components/ui/separator';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle, Home, Code, PanelLeft, Library, Eye, CheckCircle2 } from 'lucide-react';
 
+export const meta = {
+  title: "Artifact工作室",
+  description: "在线代码编辑器，支持实时预览和文件上传",
+  category: "工具",
+};
+
 // 代码编辑器组件
 const CodeEditor = ({ code, setCode }) => {
   const fileInputRef = React.useRef(null);

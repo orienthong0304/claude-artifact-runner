@@ -22,6 +22,12 @@ import {
   CheckSquare
 } from 'lucide-react';
 
+export const meta = {
+  title: "新闻发布",
+  description: "新闻稿件编辑发布工具，支持富文本编辑和分类管理",
+  category: "工具",
+};
+
 const PublishNews = () => {
   const [formData, setFormData] = useState({
     title: '',

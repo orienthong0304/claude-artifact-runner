@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
 
+export const meta = {
+  title: "销售分析演示",
+  description: "AI驱动的销售数据分析仪表盘，支持多维度数据筛选和可视化",
+  category: "数据分析",
+};
+
 // 模拟AI分析过程的演示组件
 const SalesAnalysisDemo = () => {
   const [analysisStage, setAnalysisStage] = useState(0);

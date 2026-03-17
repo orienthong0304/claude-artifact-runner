@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     Pages({
       dirs: [{ dir: 'src/artifacts', baseRoute: '' }],
-      extensions: ['jsx', 'tsx'],   
+      extensions: ['jsx', 'tsx'],
     }),
   ],
   resolve: {
@@ -17,5 +17,26 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       'src': path.resolve(__dirname, './src'),
     },
-  }
+  },
+  build: {
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-ui': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-toast',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-select',
+          ],
+          'vendor-charts': ['echarts', 'recharts'],
+          'vendor-utils': ['date-fns', 'clsx', 'tailwind-merge', 'framer-motion'],
+        },
+      },
+    },
+  },
 })

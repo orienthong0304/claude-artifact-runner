@@ -1,115 +1,118 @@
-import { useState } from 'react';
-import { AlertCircle, Mail, Lock, Github, Facebook, Twitter } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Link } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { ArrowRight, Layers, Zap, Globe, Code } from 'lucide-react';
 
-const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+export const meta = {
+  title: "首页",
+  description: "Artifact Runner 展示平台首页",
+  isHidden: true,
+};
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !password) {
-      setError('Please fill in all fields');
-    } else {
-      setError('');
-      console.log('Login attempted:', { email, password });
-      // Here you would typically handle the login logic
-      alert(`Login attempted: ${email}, ${password}`);
-    }
-  };
+const HomePage = () => {
+  const navigate = useNavigate();
 
-  const handleSocialLogin = (platform: string) => {
-    console.log(`${platform} login attempted`);
-    // Here you would typically handle the social login logic
-    alert(`${platform} login attempted`);
-  };
+  const features = [
+    {
+      icon: <Layers className="w-6 h-6" />,
+      title: "丰富的组件展示",
+      description: "包含数十个精心设计的页面和交互组件"
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "即时预览",
+      description: "基于文件系统路由，自动生成页面和目录"
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: "响应式设计",
+      description: "支持桌面和移动端，适配各种屏幕尺寸"
+    },
+    {
+      icon: <Code className="w-6 h-6" />,
+      title: "开发友好",
+      description: "TypeScript + React + Tailwind，快速开发"
+    },
+  ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">Demo Login Component</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-            </div>
-            <Button type="submit" className="w-full">Log In</Button>
-          </form>
-
-          {error && (
-            <Alert variant="destructive" className="mt-4">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
-
-          <div className="relative mt-6">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-3 mt-6">
-            <Button variant="outline" className="w-full flex items-center justify-center gap-2" onClick={() => handleSocialLogin('Github')}>
-              <Github className="h-5 w-5" />
-              GitHub
+    <div className="min-h-[calc(100vh-3.5rem)]">
+      {/* Hero 区域 */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10 py-20 px-4">
+        <div className="container mx-auto text-center max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+            Artifact Runner
+          </h1>
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+            一个强大的 React 组件与页面展示平台，基于文件系统自动路由，
+            快速预览和管理你的所有 Artifact 作品。
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Button size="lg" onClick={() => navigate('/directory')} className="gap-2">
+              浏览所有页面
+              <ArrowRight className="w-4 h-4" />
             </Button>
-            <Button variant="outline" className="w-full flex items-center justify-center gap-2" onClick={() => handleSocialLogin('Facebook')}>
-              <Facebook className="h-5 w-5" />
-              Facebook
-            </Button>
-            <Button variant="outline" className="w-full flex items-center justify-center gap-2" onClick={() => handleSocialLogin('Twitter')}>
-              <Twitter className="h-5 w-5" />
-              Twitter
+            <Button size="lg" variant="outline" onClick={() => navigate('/admin')}>
+              管理后台
             </Button>
           </div>
+        </div>
+      </section>
 
-          <div className="text-center text-sm mt-6">
-            Don't have an account?{' '}
-            <Link to="signup" className="text-primary hover:underline font-bold">
-              Sign up
-            </Link>
+      {/* 特性区域 */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10">平台特性</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, i) => (
+              <Card key={i} className="text-center hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="mx-auto p-3 bg-primary/10 rounded-xl w-fit mb-2">
+                    {feature.icon}
+                  </div>
+                  <CardTitle className="text-lg">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
+
+      {/* 快速入口 */}
+      <section className="py-12 px-4 bg-muted/50">
+        <div className="container mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-6">快速访问</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { label: 'AI 应用场景', path: '/ai-application-scenarios' },
+              { label: 'AI 演示', path: '/ai-demo' },
+              { label: '数据平台', path: '/data-platform' },
+              { label: '效率工具', path: '/efficiency' },
+              { label: '示例合集', path: '/examples' },
+            ].map(item => (
+              <Button
+                key={item.path}
+                variant="secondary"
+                onClick={() => navigate(item.path)}
+                className="gap-1"
+              >
+                {item.label}
+                <ArrowRight className="w-3 h-3" />
+              </Button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 底部 */}
+      <footer className="py-8 px-4 border-t text-center text-sm text-muted-foreground">
+        <p>Artifact Runner &copy; 2025 — 由 React + Vite + Tailwind 构建</p>
+      </footer>
     </div>
   );
 };
 
-export default LoginForm;
+export default HomePage;

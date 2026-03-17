@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Play, Pause, RotateCcw, ChevronRight, Calculator, Grid } from 'lucide-react';
 
+export const meta = {
+  title: "奶牛编号可视化",
+  description: "矩阵快速幂算法的动态可视化演示工具",
+  category: "工具",
+};
+
 const MOD = 123456789;
 const N = 6;
 

@@ -8,6 +8,12 @@ import {
   PolarAngleAxis, PolarRadiusAxis, Radar, Tooltip
 } from 'recharts';
 
+export const meta = {
+  title: "智能标书系统",
+  description: "AI辅助标书生成与评分系统，支持模板选择和智能优化",
+  category: "AI应用",
+};
+
 const IntelligentBiddingSystem = () => {
   const [activeTab, setActiveTab] = useState('generate');
   const [selectedTemplate, setSelectedTemplate] = useState('政府信息化项目');

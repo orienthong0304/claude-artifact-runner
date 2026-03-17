@@ -37,11 +37,11 @@ const About = () => {
     <div className="container mx-auto py-8 px-4">
       {/* 头部介绍 */}
       <div className="mb-12 text-center">
-        <div className="inline-block p-3 bg-blue-100 rounded-full mb-6">
-          <Code className="w-8 h-8 text-blue-600" />
+        <div className="inline-block p-3 bg-blue-100 dark:bg-blue-900 rounded-full mb-6">
+          <Code className="w-8 h-8 text-blue-600 dark:text-blue-400" />
         </div>
         <h1 className="text-4xl font-bold mb-4">Claude Artifact Runner</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           一个专为运行和展示 Claude AI 生成的 Artifacts 设计的现代化 React 应用
         </p>
       </div>
@@ -110,7 +110,7 @@ const About = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="font-mono text-sm p-4 bg-gray-50 rounded-md">
+                <div className="font-mono text-sm p-4 bg-muted rounded-md">
                   <pre className="whitespace-pre-wrap">
 {`claude-artifact-runner/
   ├── src/
@@ -152,7 +152,7 @@ const About = () => {
                   <li>可选：添加元数据以自定义在目录中的显示方式</li>
                 </ol>
 
-                <div className="p-4 bg-gray-50 rounded-md my-4">
+                <div className="p-4 bg-muted rounded-md my-4">
                   <p className="font-semibold mb-2">Artifact 文件示例：</p>
                   <pre className="font-mono text-sm whitespace-pre-wrap">
 {`// 示例：src/artifacts/my-artifact.tsx
@@ -226,9 +226,9 @@ export default MyComponent;`}
       </div>
 
       {/* 底部 CTA */}
-      <div className="bg-blue-50 rounded-lg p-8 text-center">
+      <div className="bg-primary/5 rounded-lg p-8 text-center">
         <h3 className="text-2xl font-bold mb-4">开始使用 Claude Artifact Runner</h3>
-        <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
           探索 AI 生成的 Artifact，或创建自己的交互式内容
         </p>
         <Button size="lg" onClick={() => navigate('/')}>
@@ -250,7 +250,7 @@ const FeatureCard = ({ icon, title, description }) => (
       </div>
     </CardHeader>
     <CardContent>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-muted-foreground">{description}</p>
     </CardContent>
   </Card>
 );
@@ -258,17 +258,17 @@ const FeatureCard = ({ icon, title, description }) => (
 // 链接卡片组件
 const LinkCard = ({ title, description, icon, onClick }) => (
   <div 
-    className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+    className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-accent transition-colors"
     onClick={onClick}
   >
-    <div className="p-3 bg-blue-100 rounded-full mr-4">
+    <div className="p-3 bg-primary/10 rounded-full mr-4">
       {icon}
     </div>
     <div>
       <h3 className="font-medium">{title}</h3>
-      <p className="text-sm text-gray-500">{description}</p>
+      <p className="text-sm text-muted-foreground">{description}</p>
     </div>
-    <ChevronRight className="ml-auto w-5 h-5 text-gray-400" />
+    <ChevronRight className="ml-auto w-5 h-5 text-muted-foreground" />
   </div>
 );
 

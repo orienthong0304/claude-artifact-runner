@@ -3,6 +3,11 @@ import { FileText, Plus, Trash2, Edit3, Download, Share2, Settings, ChevronUp, C
 import { complete, completeStream } from '@/lib/openrouter';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 
+export const meta = {
+  title: "Perplexity Pages工具",
+  description: "AI驱动的长文档编辑和生成工具，支持分段编辑和AI续写",
+  category: "AI应用",
+};
 
 // 编辑模态框组件
 const EditModal = ({ isOpen, onClose, section, onSave, isGenerating }) => {

@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
+export const meta = {
+  title: "Fiona祝福",
+  description: "精美的动态祝福页面，带有粒子动画效果",
+  category: "展示",
+};
+
 const BlessingResponse = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [particles, setParticles] = useState([]);
